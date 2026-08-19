@@ -1,0 +1,279 @@
+:root {
+  color-scheme: light;
+  --forest: #245b3f;
+  --forest-dark: #173e2c;
+  --apple: #b9382e;
+  --apple-dark: #8f241f;
+  --paper: rgba(255, 250, 226, 0.97);
+  --ink: #332b2a;
+  --muted: #675c55;
+  --line: rgba(89, 75, 53, 0.24);
+  --shadow: 0 24px 64px rgba(33, 62, 35, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(221, 244, 208, 0.24), rgba(228, 248, 202, 0.58)),
+    url("assets/orchard-background.jpg") center / cover fixed;
+  font: 17px/1.7 ui-rounded, "Arial Rounded MT Bold", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: var(--apple-dark);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--forest-dark);
+}
+
+a:focus-visible {
+  outline: 4px solid #f6b73c;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 20px;
+  top: 16px;
+  z-index: 10;
+  transform: translateY(-160%);
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--forest-dark);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-shell {
+  width: min(960px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.legal-card {
+  overflow: hidden;
+  border: 4px solid rgba(119, 65, 34, 0.9);
+  border-radius: 30px;
+  background: var(--paper);
+  box-shadow: var(--shadow), inset 0 0 0 4px rgba(255, 255, 255, 0.62);
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.44);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  color: var(--forest-dark);
+  text-decoration: none;
+}
+
+.brand img {
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(36, 91, 63, 0.2);
+}
+
+.brand-copy {
+  display: grid;
+  gap: 2px;
+}
+
+.brand-name {
+  font-size: clamp(1.15rem, 3vw, 1.55rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.brand-tagline {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.legal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.legal-nav a {
+  padding: 9px 13px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.legal-nav a[aria-current="page"] {
+  color: #fff;
+  background: var(--apple);
+}
+
+main {
+  padding: clamp(28px, 6vw, 60px);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--apple-dark);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  color: var(--forest-dark);
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 7vw, 4.2rem);
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  margin: 2.1em 0 0.45em;
+  font-size: clamp(1.32rem, 3vw, 1.65rem);
+}
+
+p,
+li {
+  color: var(--muted);
+}
+
+ul {
+  padding-left: 1.25em;
+}
+
+li + li {
+  margin-top: 0.35em;
+}
+
+.effective {
+  margin: 10px 0 34px;
+  color: var(--forest);
+  font-weight: 800;
+}
+
+.notice {
+  margin: 28px 0;
+  padding: 18px 20px;
+  border-left: 6px solid var(--apple);
+  border-radius: 0 14px 14px 0;
+  background: rgba(246, 222, 138, 0.34);
+}
+
+.notice p {
+  margin: 0;
+  color: #54483e;
+}
+
+.page-links {
+  margin-top: 42px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-weight: 800;
+}
+
+.site-footer {
+  padding: 20px 32px 26px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  body {
+    background-attachment: scroll;
+    font-size: 16px;
+  }
+
+  .site-shell {
+    width: min(100% - 20px, 960px);
+    padding: 10px 0;
+  }
+
+  .legal-card {
+    border-width: 2px;
+    border-radius: 20px;
+  }
+
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .brand img {
+    width: 80px;
+    height: 60px;
+  }
+
+  .legal-nav {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  main {
+    padding: 30px 22px 38px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .site-footer {
+    padding: 18px 22px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
